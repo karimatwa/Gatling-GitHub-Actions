@@ -1,0 +1,11 @@
+steps:
+  - uses: gatling/enterprise-action@v1
+    with:
+      api_token: ${{ secrets.GATLING_ENTERPRISE_API_TOKEN }}
+      simulation_id: '00000000-0000-0000-0000-000000000000'
+      extra_system_properties: >
+        {
+          "users":"2"
+        }
+      fail_action_on_run_failure: true
+      wait_for_run_end: true
