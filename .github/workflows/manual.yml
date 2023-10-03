@@ -22,4 +22,10 @@ jobs:
             } 
           fail_action_on_run_failure: true
           wait_for_run_end: true
-
+      - run: |
+          echo "run_id=${{ steps.enterprise-action.outputs.run_id }}"
+          echo "reports_url=${{ steps.enterprise-action.outputs.reports_url }}"
+          echo "runs_url=${{ steps.enterprise-action.outputs.runs_url }}"
+          echo "run_status_code=${{ steps.enterprise-action.outputs.run_status_code }}"
+          echo "run_status_name=${{ steps.enterprise-action.outputs.run_status_name }}"
+          echo "run_assertions=${{ steps.enterprise-action.outputs.run_assertions }}"      
