@@ -2,7 +2,7 @@ steps:
   - uses: gatling/enterprise-action@v1
     with:
       api_token: ${{ secrets.GATLING_ENTERPRISE_API_TOKEN }}
-      simulation_id: '00000000-0000-0000-0000-000000000000'
+      simulation_id: ${{ inputs.simulation_id }}
       extra_system_properties: >
         {
           "users":"2"
