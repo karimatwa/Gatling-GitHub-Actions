@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: gatling-enterprise-action
-      - name: Gatling Enterprise Action
+        name: Gatling Enterprise Action
         uses: gatling/enterprise-action@v1
         with:
           api_token: ${{ secrets.GATLING_ENTERPRISE_API_TOKEN }}
