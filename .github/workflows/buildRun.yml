@@ -1,4 +1,4 @@
-name: Run Gatling Enterprise Simulation
+name: Run Gatling Enterprise Simulation Build and Run
 
 # Execute the workflow on each push to the main branch
 on:
