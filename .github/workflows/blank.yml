@@ -1,0 +1,18 @@
+name: Run Gatling Enterprise Simulation
+
+on:
+  workflow_dispatch:
+    inputs:
+      simulation_id:
+        type: string
+        required: true
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gatling Enterprise Action
+        uses: gatling/enterprise-action@v1
+        with:
+          api_token: 4knK9xlSLLgsXkg9fQGNqsfHzi5YKCgNMUbrz72t5txeYUfMFhFT1fDU3MKmnDyOz
+          simulation_id: e01219cc-1535-45a5-842b-203c3bab9090
