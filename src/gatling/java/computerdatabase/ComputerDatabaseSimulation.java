@@ -70,29 +70,6 @@ public class ComputerDatabaseSimulation extends Simulation {
                                                                                                                         "37")
                                                                                                         .check(
                                                                                                                         status().is(
-                                                                                                                                        // we
-                                                                                                                                        // do
-                                                                                                                                        // a
-                                                                                                                                        // check
-                                                                                                                                        // on
-                                                                                                                                        // a
-                                                                                                                                        // condition
-                                                                                                                                        // that's
-                                                                                                                                        // been
-                                                                                                                                        // customized
-                                                                                                                                        // with
-                                                                                                                                        // a
-                                                                                                                                        // lambda.
-                                                                                                                                        // It
-                                                                                                                                        // will
-                                                                                                                                        // be
-                                                                                                                                        // evaluated
-                                                                                                                                        // every
-                                                                                                                                        // time
-                                                                                                                                        // a
-                                                                                                                                        // user
-                                                                                                                                        // executes
-                                                                                                                                        // the
                                                                                                                                         // request
                                                                                                                                         session -> 200
                                                                                                                                                         + ThreadLocalRandom
