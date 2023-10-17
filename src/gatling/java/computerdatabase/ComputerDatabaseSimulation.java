@@ -26,9 +26,8 @@ public class ComputerDatabaseSimulation extends Simulation {
                         .exec(
                                         http("Search")
                                                         .get("/computers?f=#{searchCriterion}")
-                                                        .check(
-                                                                        css("a:contains('#{searchComputerName}')",
-                                                                                        "href").saveAs("computerUrl")))
+                                                        .check(css("a:contains('#{searchComputerName}')", "href")
+                                                                        .saveAs("computerUrl")))
                         .pause(1)
                         .exec(
                                         http("Select")
@@ -75,7 +74,7 @@ public class ComputerDatabaseSimulation extends Simulation {
                                                                                                                                                         + ThreadLocalRandom
                                                                                                                                                                         .current()
                                                                                                                                                                         .nextInt(2)))))
-                                        // if the chain didn't finally succeed, have the user exit the whole scenario
+
                                         .exitHereIfFailed();
 
         HttpProtocolBuilder httpProtocol = http.baseUrl("https://computer-database.gatling.io")
