@@ -24,24 +24,23 @@ public class ComputerDatabaseSimulation extends Simulation {
                         .pause(1)
                         .feed(feeder)
                         .exec(
-                                        http("Search")
-                                                        .get("/computers?f=#{searchCriterion}")
-                                                        .check(css("a:contains('#{searchComputerName}')", "href")
-                                                                        .saveAs("computerUrl")))
+                                http("Search")
+                                        .get("/computers?f=#{searchCriterion}")
+                                        .check(css("a:contains('#{searchComputerName}')", "href").saveAs("computerUrl")))
                         .pause(1)
                         .exec(
-                                        http("Select")
-                                                        .get("#{computerUrl}")
-                                                        .check(status().is(200)))
+                                http("Select")
+                                        .get("#{computerUrl}")
+                                        .check(status().is(200)))
                         .pause(1);
 
         ChainBuilder browse =
                         // Note how we force the counter name, so we can reuse it
                         repeat(4, "i").on(
-                                        exec(
-                                                        http("Page #{i}")
-                                                                        .get("/computers?p=#{i}"))
-                                                        .pause(1));
+                                exec(
+                                        http("Page #{i}")
+                                        .get("/computers?p=#{i}"))
+                                        .pause(1));
 
         // Note we should be using a feeder here
         // let's demonstrate how we can retry: let's make the request fail randomly and
@@ -51,29 +50,24 @@ public class ComputerDatabaseSimulation extends Simulation {
         ChainBuilder edit =
                         // let's try at max 2 times
                         tryMax(2)
-                                        .on(
-                                                        exec(
-                                                                        http("Form")
-                                                                                        .get("/computers/new"))
-                                                                        .pause(1)
-                                                                        .exec(
-                                                                                        http("Post")
-                                                                                                        .post("/computers")
-                                                                                                        .formParam("name",
-                                                                                                                        "Beautiful Computer")
-                                                                                                        .formParam("introduced",
-                                                                                                                        "2012-05-30")
-                                                                                                        .formParam("discontinued",
-                                                                                                                        "")
-                                                                                                        .formParam("company",
-                                                                                                                        "37")
-                                                                                                        .check(
-                                                                                                                        status().is(
-                                                                                                                                        // request
-                                                                                                                                        session -> 200
-                                                                                                                                                        + ThreadLocalRandom
-                                                                                                                                                                        .current()
-                                                                                                                                                                        .nextInt(2)))))
+                                .on(
+                                        exec(
+                                                http("Form").get("/computers/new"))
+                                                .pause(1)
+                                                .exec(
+                                                http("Post")
+                                                .post("/computers")
+                                                .formParam("name",
+                                                                "Beautiful Computer")
+                                                .formParam("introduced",
+                                                                "2012-05-30")
+                                                .formParam("discontinued",
+                                                                "")
+                                                .formParam("company",
+                                                                "37")
+                                                .check(status().is(
+                                                // request
+                                                session -> 200 + ThreadLocalRandom.current().nextInt(2)))))
 
                                         .exitHereIfFailed();
 
