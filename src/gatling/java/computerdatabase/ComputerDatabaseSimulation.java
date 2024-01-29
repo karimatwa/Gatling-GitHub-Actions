@@ -80,9 +80,9 @@ public class ComputerDatabaseSimulation extends Simulation {
         // , browse
         );
         ScenarioBuilder admins = scenario("Admins").exec(search, browse, edit);
-
+        Assertion assertion = global().responseTime().percentile(95.0).lt(250);
         {
                 setUp(
-                                users.injectOpen(rampUsers(usersCount).during(35))).protocols(httpProtocol);
+                                users.injectOpen(rampUsers(usersCount).during(35))).assertions(assertion).protocols(httpProtocol);
         }
 }
