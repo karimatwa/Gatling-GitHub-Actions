@@ -14,6 +14,8 @@ public class ComputerDatabaseSimulation extends Simulation {
         
         int usersCount = Integer.parseInt(System.getProperty("users", "6000"));
 
+
+        
         @Override
         public void before() {
                 System.out.printf("Running test with %d users%n", usersCount);
