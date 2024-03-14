@@ -20,8 +20,6 @@ public class ComputerDatabaseSimulation extends Simulation {
         public void before() {
                 System.out.printf("Running test with %d users%n", usersCount);
         }
-
-
         
         ChainBuilder search = exec(http("Home").get("/"))
                         .pause(1)
