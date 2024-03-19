@@ -14,7 +14,6 @@ public class ComputerDatabaseSimulation extends Simulation {
         Properties properties = new Properties();
 
         int usersCount = Integer.parseInt(System.getProperty("users", "6000"));
-
         
         @Override
         public void before() {
