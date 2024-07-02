@@ -10,6 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class ComputerDatabaseSimulation extends Simulation {
        
         FeederBuilder<String> feeder = csv("search.csv").random();
+       
         Properties properties = new Properties();
        
         int usersCount = Integer.parseInt(System.getProperty("users", "6000"));
