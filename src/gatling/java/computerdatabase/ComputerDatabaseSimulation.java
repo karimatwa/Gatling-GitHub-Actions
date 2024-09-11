@@ -8,13 +8,6 @@ import io.gatling.javaapi.http.*;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * This sample is based on our official tutorials:
- * <ul>
- *   <li><a href="https://gatling.io/docs/gatling/tutorials/quickstart">Gatling quickstart tutorial</a>
- *   <li><a href="https://gatling.io/docs/gatling/tutorials/advanced">Gatling advanced tutorial</a>
- * </ul>
- */
 public class ComputerDatabaseSimulation extends Simulation {
 
     FeederBuilder<String> feeder = csv("search.csv").random();
