@@ -45,6 +45,6 @@ jobs:
 
       # Run the simulation on Gatling Enterprise
       - name: Gatling Enterprise Action
-        uses: gatling/enterprise-action@v1
+        uses: gatling/enterprise-action@v1.2.1
         with:
           simulation_id: ${{ env.SIMULATION_ID }}
