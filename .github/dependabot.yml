@@ -1,8 +1,8 @@
-
 version: 2
 updates:
-  - package-ecosystem: "gradle" 
+  - package-ecosystem: "gradle"
     directory: "/"
+    target-branch: "feature-1"
     schedule:
       interval: "weekly"
       day: "sunday"
