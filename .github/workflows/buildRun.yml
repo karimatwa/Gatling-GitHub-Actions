@@ -33,7 +33,7 @@ jobs:
       # supported by your version of Gatling and by your build tool.
       # See https://github.com/actions/setup-java/blob/main/README.md for options.
       - name: Setup JDK
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
@@ -45,6 +45,6 @@ jobs:
 
       # Run the simulation on Gatling Enterprise
       - name: Gatling Enterprise Action
-        uses: gatling/enterprise-action@v1.2.1
+        uses: gatling/enterprise-action@v1
         with:
           simulation_id: ${{ env.SIMULATION_ID }}
